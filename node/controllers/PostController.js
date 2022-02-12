@@ -1,15 +1,15 @@
 // importando o modelo
-import BlogModel from '../models/BlogModel.js';
+import PostModel from '../models/PostModel.js';
 
 //* Métodos para o CRUD *//
 
 // Mostrar todos os registros
-export const getAllBlogs = async (request, response) => {
+export const getAllPosts = async (request, response) => {
   try {
     
-    const blogs = await BlogModel.findAll();
+    const posts = await PostModel.findAll();
     
-    response.json(blogs);
+    response.json(posts);
 
   } catch (error) {
 
@@ -19,12 +19,12 @@ export const getAllBlogs = async (request, response) => {
 }
 
 // Mostrar um registro
-export const getBlog = async (request, response) => {
+export const getPost = async (request, response) => {
   try {
     
-    const blog = await BlogModel.findAll( { where: { id: request.params.id } } );
+    const post = await PostModel.findAll( { where: { id: request.params.id } } );
     
-    response.json(blog);
+    response.json(post);
 
   } catch (error) {
     
@@ -35,10 +35,10 @@ export const getBlog = async (request, response) => {
 
 
 // Criar um registro
-export const createBlog = async(request, response) => {
+export const createPost = async(request, response) => {
   try {
     
-    await BlogModel.create(request.body);
+    await PostModel.create(request.body);
 
     response.json( { 'message': 'Registro criado com sucesso!' } );
 
@@ -50,10 +50,10 @@ export const createBlog = async(request, response) => {
 }
 
 // Atualizar um registro
-export const updateBlog = async(request, response) => {
+export const updatePost = async(request, response) => {
   try {
 
-    await BlogModel.update(request.body, { where: { id: request.params.id } } );
+    await PostModel.update(request.body, { where: { id: request.params.id } } );
 
     response.json( { 'message': 'Registro atualizado com sucesso!' } );
     
@@ -65,10 +65,10 @@ export const updateBlog = async(request, response) => {
 }
 
 // Apagar um registro
-export const deleteBlog = async(request, response) => {
+export const deletePost = async(request, response) => {
   try {
 
-    BlogModel.destroy( { where: {id: request.params.id } } );
+    PostModel.destroy( { where: {id: request.params.id } } );
 
     response.json( {'message': 'Registro apagado com sucesso!'} );
     

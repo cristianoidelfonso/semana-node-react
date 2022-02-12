@@ -3,7 +3,7 @@ import db from '../database/db.js';
 // Importar sequelize
 import { DataTypes } from 'sequelize';
 
-const BlogModel = db.define('blogs', {
+const PostModel = db.define('posts', {
   title: { 
     type: DataTypes.STRING 
   },
@@ -15,4 +15,4 @@ const BlogModel = db.define('blogs', {
   }
 })
 
-export default BlogModel;
+export default PostModel;

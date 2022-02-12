@@ -3,13 +3,13 @@ import cors from 'cors';
 
 import db from './database/db.js';
 
-import blogRoutes from './routes/index.js';
+import postRoutes from './routes/index.js';
 
 const app = express();
 
 app.use( cors() );
 app.use( express.json() );
-app.use('/blogs', blogRoutes);
+app.use('/posts', postRoutes);
 
 try {
 

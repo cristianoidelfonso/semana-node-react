@@ -1,13 +1,13 @@
 // Importando o express
 import express from 'express';
-import { getAllBlogs, getBlog, createBlog, updateBlog, deleteBlog } from '../controllers/BlogController.js';
+import { getAllPosts, getPost, createPost, updatePost, deletePost } from '../controllers/PostController.js';
 
 const router = express.Router();
 
-router.get('/', getAllBlogs);
-router.get('/:id', getBlog);
-router.post('/', createBlog);
-router.put('/:id', updateBlog);
-router.delete('/:id', deleteBlog);
+router.get('/', getAllPosts);
+router.get('/:id', getPost);
+router.post('/', createPost);
+router.put('/:id', updatePost);
+router.delete('/:id', deletePost);
 
 export default router;
