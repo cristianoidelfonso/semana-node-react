@@ -4,8 +4,15 @@ import db from '../database/db.js';
 import { DataTypes } from 'sequelize';
 
 const BlogModel = db.define('blogs', {
-  titulo: { type: DataTypes.STRING },
-  conteudo: { type: DataTypes.STRING },
+  title: { 
+    type: DataTypes.STRING 
+  },
+  content: { 
+    type: DataTypes.STRING 
+  },
+  author: {
+    type:DataTypes.STRING
+  }
 })
 
 export default BlogModel;
